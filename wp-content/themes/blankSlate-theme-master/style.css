@@ -49,8 +49,8 @@ audio:not([controls]) { display: none; }
  */
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+html, button, input, select, textarea { font-family: 'PT Sans', sans-serif; color: #222; }
+body { margin: 0; font-size: 1.2em; background-color: #fcfbf7;}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -58,17 +58,17 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #45280c; color: #fff; text-shadow: none; }
+::selection { background: #45280c; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #45280c; }
+a:visited { color: #45280c; }
+a:hover { color: #45280c; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -226,6 +226,13 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+/* =============================================================================
+   Images
+   ========================================================================== */
+
+img { max-width: 100%; height: auto;}
+#sidebar .attachment-thumbnail {width: 50%; height: 50%;}
+
 
 /*Utility Styles************************/
 .alignright { float: right; text-align: right; }
@@ -233,9 +240,45 @@ td { vertical-align: top; }
 .aligncenter { display: block; margin: 0 auto; }
 
 
+/* =============================================================================
+   layout
+   ========================================================================== */
+
+#content { float: right; width: 60%;}
+#sidebar { float: left; width: 30%; margin-left: 5%; }
+
+
+/* =============================================================================
+   Header
+   ========================================================================== */
 
 
 
+.site-header {background-color: #45280C; color: #FCFBF7; padding-left: 2%; }
+
+hgroup {float: left; margin-right: 3em;}
+
+.nav-menu {float: left; margin-top: 4.4em; padding: 0.4em; font-weight: bold;}
+
+.nav-menu li {display: inline; margin-right: 1em;}
+.nav-menu li:last-child {display: inline; margin-right: 0em;}
+
+.site-header a, .site-header a:hover, .site-header a:focus  {color: #FCFBF7;}
+
+
+
+/* =============================================================================
+   Main Content
+   ========================================================================== */
+
+h1,h2,h3,h4,h5,h6 {font-family: 'Amethysta', serif;}
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+
+
+.wrapper { padding-left: 2%; }
 
 
 

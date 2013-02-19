@@ -10,8 +10,49 @@
  */
 ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
 		<div id="sidebar" class="widget-area" role="complementary">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+<?php
+
+
+//if on single page
+if ( is_single() ) :
+//setup post data
+global $post;
+//get the category(s) of current post
+$categories = get_the_category();
+//loop through each category the post belongs too
+foreach ($categories as $category) :
+?>
+
+<li class="sidebar_links">
+<h2><?php echo $category->name; ?></h2>
+
+<ul>
+<?php
+//how many other posts from each of the current posts category
+$posts = get_posts('numberposts=100&category='. $category->term_id);
+//loop through posts
+foreach($posts as $post) :
+?>
+
+<li>
+<a href="<?php the_permalink(); ?>" class="sidebar_link"><?php the_title(); ?>
+</a>
+</li>
+<?php endforeach; ?>
+</ul>
+
+</li>
+<?php
+//end categories loop
+endforeach; endif ; ?>
+
+
+
+
 		</div><!-- #secondary -->
-	<?php endif; ?>
+
+

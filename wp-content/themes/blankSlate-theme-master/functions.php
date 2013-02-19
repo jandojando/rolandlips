@@ -156,7 +156,7 @@ add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
  */
 function twentytwelve_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
+		$args['show_home'] = false;
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'twentytwelve_page_menu_args' );
@@ -177,10 +177,11 @@ function twentytwelve_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+
 	register_sidebar( array(
-		'name' => __( 'First Front Page Widget Area', 'twentytwelve' ),
+		'name' => __( 'Art' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve' ),
+		'description' => __( 'Sidebar for Art page' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -188,14 +189,37 @@ function twentytwelve_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Second Front Page Widget Area', 'twentytwelve' ),
+		'name' => __( 'Projects' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve' ),
+		'description' => __( 'Sidebar for Projects Page' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Applied Work' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'Sidebar for Applied Work Page' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+
+	register_sidebar( array(
+		'name' => __( 'Rent' ),
+		'id' => 'sidebar-5',
+		'description' => __( 'Sidebar for Rent age' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+
 }
 add_action( 'widgets_init', 'twentytwelve_widgets_init' );
 
@@ -368,6 +392,25 @@ function blankSlate_load_javascript_files() {
 		wp_enqueue_script('home-page-main-flex-slider');
 	}
 }
+
+
+
+function catch_that_image() {
+global $post, $posts;
+$first_img = '';
+ob_start();
+ob_end_clean();
+if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches)){
+$first_img = $matches [1] [0];
+return $first_img;
+}
+else {
+$first_img = "/images/default.jpg";
+return $first_img;
+}
+}
+
+
 
 add_action( 'wp_enqueue_scripts', 'blankSlate_load_javascript_files' );
 

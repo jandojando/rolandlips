@@ -28,4 +28,5 @@ get_header(); ?>
 		</div><!-- #content -->
 
 <?php get_sidebar(); ?>
+<div class="clearfix"></div>
 <?php get_footer(); ?>
