@@ -847,7 +847,7 @@ img.aligncenter {
 .gallery .gallery-item {
 	float: left;
 	margin-top: 0;
-	text-align: center;
+	text-align: left;
 	width: 33%;
 }
 .gallery-columns-2 .gallery-item {
@@ -857,7 +857,7 @@ img.aligncenter {
 	width: 25%;
 }
 .gallery img {
-	border: 2px solid #cfcfcf;
+
 }
 .gallery-columns-2 .attachment-medium {
 	max-width: 92%;

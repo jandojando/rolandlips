@@ -219,6 +219,26 @@ function twentytwelve_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name' => __( 'Contact' ),
+		'id' => 'sidebar-6',
+		'description' => __( 'Sidebar for Rent age' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'About' ),
+		'id' => 'sidebar-7',
+		'description' => __( 'Sidebar for Rent age' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
 
 }
 add_action( 'widgets_init', 'twentytwelve_widgets_init' );
@@ -410,6 +430,19 @@ return $first_img;
 }
 }
 
+function twentyten_remove_gallery_css( $css ) {
+	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+}
+add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+
+
+// Puts link in excerpts more tag
+function new_excerpt_more($more) {
+       global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read more...</a>';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
 
 
 add_action( 'wp_enqueue_scripts', 'blankSlate_load_javascript_files' );

@@ -38,10 +38,10 @@ $posts = get_posts('numberposts=100&category='. $category->term_id);
 foreach($posts as $post) :
 ?>
 
-<li>
-<a href="<?php the_permalink(); ?>" class="sidebar_link"><?php the_title(); ?>
-</a>
-</li>
+	   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="sidebar-list"> <li>
+	    <?php the_post_thumbnail('thumbnail'); ?> 
+	    <?php the_title(); ?><div class="clearfix"></div>
+	  	</li></a><div class="clearfix"></div>
 <?php endforeach; ?>
 </ul>
 

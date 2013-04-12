@@ -13,8 +13,7 @@
 	</div><!-- #main .wrapper -->
 	<footer>
 		<p>
-			Proudly powered by
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
+	&copy; Roland Lips
 		<p>
 	</footer>
 </div><!-- #page -->

@@ -14,6 +14,7 @@
 		<div id="sidebar" class="widget-area" role="complementary">
 			<?php dynamic_sidebar( 'sidebar-3' ); ?>
 
+<h2>Overview</h2>
 
 <ul>
 	  <?php
@@ -23,9 +24,10 @@
  
 	  // The Loop
 	  while ( have_posts() ) : the_post(); ?>
-	    <li>
-	    <em><?php the_time('M'); ?> <?php the_time('j'); ?> <?php the_time('Y'); ?></em> &nbsp; <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-	  	</li>
+	   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="sidebar-list"> <li>
+	    <?php the_post_thumbnail('thumbnail'); ?> 
+	    <?php the_title(); ?><div class="clearfix"></div>
+	  	</li></a><div class="clearfix"></div>
  
 	  <?php endwhile;
  

@@ -49,8 +49,8 @@ audio:not([controls]) { display: none; }
  */
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: 'PT Sans', sans-serif; color: #222; }
-body { margin: 0; font-size: 1.2em; background-color: #fcfbf7;}
+html, button, input, select, textarea { font-family: 'Ubuntu', sans-serif; color: #505050; font-weight: 300; line-height: 1.5;  }
+body { margin: 0; font-size: 1.2em; background-color: #faf9f7;}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -58,18 +58,18 @@ body { margin: 0; font-size: 1.2em; background-color: #fcfbf7;}
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #45280c; color: #fff; text-shadow: none; }
-::selection { background: #45280c; color: #fff; text-shadow: none; }
+::-moz-selection { background: #692d15; color: #fff; text-shadow: none; }
+::selection { background: #692d15; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
    Links
    ========================================================================== */
 
-a { color: #45280c; }
-a:visited { color: #45280c; }
-a:hover { color: #45280c; }
-a:focus { outline: thin dotted; }
+a { color: #769504; text-decoration: none; }
+a:visited { color: #769504; text-decoration: none;}
+a:hover { text-decoration: underline; }
+a:focus { text-decoration: underline; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active { outline: 0; }
@@ -106,7 +106,7 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol { margin: 0; padding: 0; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -231,7 +231,6 @@ td { vertical-align: top; }
    ========================================================================== */
 
 img { max-width: 100%; height: auto;}
-#sidebar .attachment-thumbnail {width: 50%; height: 50%;}
 
 
 /*Utility Styles************************/
@@ -244,26 +243,87 @@ img { max-width: 100%; height: auto;}
    layout
    ========================================================================== */
 
-#content { float: right; width: 60%;}
-#sidebar { float: left; width: 30%; margin-left: 5%; }
+.site-header { width: 92%; height: 7em; background: url('images/background2.jpg') no-repeat #45280C; color: #FCFBF7;  -moz-box-shadow: 0px 2px 2px #6d6d6d; -webkit-box-shadow: 0px 2px 2px #6d6d6d; box-shadow: 0px 2px 2px #6d6d6d; z-index: 25; position: fixed; }
+.widget-area{ float: left; width: 16%;  padding: 2em 2% 0 2%; margin-right: 4%;  background: #f3eee8; z-index: 1; border: 1px solid #e8ddcf; -moz-box-shadow: 0px 5px 5px #d7d7d7 inset; -webkit-box-shadow: 0px 5px 5px #d7d7d7 inset; box-shadow: 0px 5px 5px #d7d7d7 inset; }
+.wrapper, .site-header { padding-left: 4%; padding-right: 4%;}
+.wrapper {padding-top: 7em; width: 92%;}
+.inner-header {margin: 0 auto; text-align: center;}
 
 
 /* =============================================================================
    Header
    ========================================================================== */
 
+hgroup {margin-top: 0.5em; width: 100%;}
 
+.site-title a { color: #FAF9F7; font-size: 1.2em;}
+.site-title a:before {
+  content: "\211C";
+margin-right: 0.5em;
+display: inline-block;
 
-.site-header {background-color: #45280C; color: #FCFBF7; padding-left: 2%; }
+/* Safari */
+-webkit-transform: rotate(-180deg);
 
-hgroup {float: left; margin-right: 3em;}
+/* Firefox */
+-moz-transform: rotate(-180deg);
 
-.nav-menu {float: left; margin-top: 4.4em; padding: 0.4em; font-weight: bold;}
+/* IE */
+-ms-transform: rotate(-180deg);
 
-.nav-menu li {display: inline; margin-right: 1em;}
-.nav-menu li:last-child {display: inline; margin-right: 0em;}
+/* Opera */
+-o-transform: rotate(-180deg);
 
-.site-header a, .site-header a:hover, .site-header a:focus  {color: #FCFBF7;}
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.site-title a:hover {text-decoration: none; }
+
+.main-navigation {min-height: 2em; display: inline-block; margin-left: 3.5em;}
+
+.main-navigation ul {
+    width: 12em;
+    padding: 0 0.2em 0 0.2em;
+    border: solid 1px #aaa;
+    background: rgba(250, 249, 247, 0.9) url(images/icon-menu.png) no-repeat 10px 11px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+
+.single-post .main-navigation li.menu-item:nth-child(1){
+    display: block; /* show only about posts*/
+}
+
+.main-navigation li {
+    display: none; /* hide all <li> items */
+    margin: 0;
+  }
+
+.main-navigation .current_page_item {
+    display: block; /* show only current <li> item */
+  }
+
+.main-navigation a {
+    display: block;
+    padding: 0.2em 0.4em 0.2em 2em;
+    text-align: left;
+  }
+.main-navigation a {
+    background: none;
+    color: #666;
+  }
+
+  /* on nav hover */
+.main-navigation ul:hover {
+    background-image: none;
+  }
+.main-navigation ul:hover li {
+    display: block;
+    margin: 0 0 5px;
+  }
+.main-navigation ul:hover .current_page_item {
+    background: url(images/icon-check.png) no-repeat 10px 7px;
+  }
 
 
 
@@ -271,19 +331,101 @@ hgroup {float: left; margin-right: 3em;}
    Main Content
    ========================================================================== */
 
-h1,h2,h3,h4,h5,h6 {font-family: 'Amethysta', serif;}
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.4em;}
-h3 {font-size: 1.2em;}
+h1,h2,h3,h4,h5,h6 {font-family: 'Quattrocento', serif; margin: 0em;}
+.wrapper h1 {font-size: 1.8em; margin: 0 0 1em 0;}
+.wrapper h2 {font-size: 1.6em;}
+.wrapper h3 {font-size: 1.4em;}
+.wrapper h3 {font-size: 1.2em;}
+
+.wrapper h1 {text-align: center; margin-left: -1em;}
+
+.wrapper h1:before {
+  content: "\211C";
+margin-right: 0.5em;
+color: #e3e3e3;
+display: inline-block;
+font-size: 1em;
+
+/* Safari */
+-webkit-transform: rotate(-180deg);
+
+/* Firefox */
+-moz-transform: rotate(-180deg);
+
+/* IE */
+-ms-transform: rotate(-180deg);
+
+/* Opera */
+-o-transform: rotate(-180deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+
+}
+
+.page p {margin: 0 0 2em;}
 
 
-.wrapper { padding-left: 2%; }
+.post .wp-post-image {display: none;}
+
+.entry-meta, .assistive-text {display: none;}
+
+.nav-previous {float: left;}
+.nav-next {float: right;}
+
+.hentry {padding-top: 2.4em; margin: 0 auto;}
+
+.site-content img.attachment-thumbnail, .gallery img {margin: 0 0 1em 0; border: 1px solid #dfdfdf;  border-radius: 5px; padding: 0.4em;}
+.site-content img.attachment-thumbnail:hover, .gallery img:hover {border: 1px solid #769504;}
+.site-content h2 {margin-bottom: 1em;}
+
+.showpost {width: 100%; margin-bottom: 2em; float: left; text-align: center;}
+.showpost p {margin: 0; text-align: left;}
+.showpost h3 {margin-bottom: 1em;}
+.showpost h3 a:hover, .showpost h3 a:focus {background: #769504; color: #fff; text-decoration:none;}
+
+
+/* =============================================================================
+   About Page
+   ========================================================================== */
+.about-image {text-align: center;}
+.wp-image-515 {border-radius: 10px;}
+
+/* =============================================================================
+   Image Gallery
+   ========================================================================== */
+
+.gallery {width: 100%;}
+.gallery-item {text-align: center; margin: 0;}
 
 
 
 
+/* =============================================================================
+   Sidebar
+   ========================================================================== */
 
+.widget-area {display: none;}
+.widget-area h2 { margin-bottom: 0.8em;}   
+.widget-area li { width: 100%; padding-bottom: 0.4em;  list-style: none; list-style-position: inside; margin: 0 0 0.6em 0; float: left; border-bottom: 1px solid #d5d5d5;}
+.widget-area em {display: none;}
+.widget-area .attachment-thumbnail{ width: 30%; height: 30%; margin-right: 5%; float: left;}
+.sidebar-image {float: left;}
+#sidebar li:hover {text-decoration: underline;}
+
+/* =============================================================================
+   Contact Form
+   ========================================================================== */
+.wpcf7 {margin: 0 auto; width: 60%;}
+
+
+.wpcf7-form input, .wpcf7-form textarea {border: 1px solid #d7d7d7; margin-top: 0.4em;}
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+footer p { text-align: center;}
 
 
 
@@ -293,8 +435,12 @@ h3 {font-size: 1.2em;}
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) { /* 320px - 1200px */ 
+
+
+
 }
 
 
@@ -345,5 +491,3 @@ h3 {font-size: 1.2em;}
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
-
-
